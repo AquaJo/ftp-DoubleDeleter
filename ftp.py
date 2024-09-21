@@ -3,6 +3,7 @@
 from ftplib import FTP
 import subprocess
 import re
+
 def normalize_ftp_dir(path):
     if not path.startswith('/'):
         path = '/' + path
