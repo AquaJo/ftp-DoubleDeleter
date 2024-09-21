@@ -1,0 +1,5 @@
+/build
+/dist
+ftp.spec
+test.js
+files_to_delete.js
