@@ -30,7 +30,7 @@ jobs:
 
       - name: Delete existing tag
         run: |
-          git tag -d v1.0.0 || true
+          git tag -d v1.0.0 || true # Delete the tag if it exists locally at some point (just for safety)
           git push origin --delete v1.0.0 || true
 
       - name: Create new tag
