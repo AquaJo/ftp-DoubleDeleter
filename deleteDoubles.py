@@ -13,6 +13,7 @@ def normalize_ftp_dir(path):
     
     return path
 
+
 # FTP-Details needed for connection
 ftp_host = input("Please enter the FTP host: ")
 ftp_user = input("Please enter the FTP username: ")
