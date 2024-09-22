@@ -28,11 +28,21 @@ jobs:
         run: |
           pyinstaller --onefile deleteDoubles.py
 
-      - name: Create Release
+      - name: Delete existing tag
+        run: |
+          git tag -d v1.0.0 || true
+          git push origin --delete v1.0.0 || true
+
+      - name: Create new tag
+        run: |
+          git tag v1.0.0
+          git push origin v1.0.0
+
+      - name: Create or Update Release
         id: create_release
         uses: softprops/action-gh-release@v1
         with:
-          tag_name: v1.0.0 # just use one release & tag --> override
+          tag_name: v1.0.0
           files: dist/deleteDoubles
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
